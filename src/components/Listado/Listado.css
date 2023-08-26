@@ -1,0 +1,8 @@
+.table-container {
+  background-color: red;
+  width: 100%;/* cambiamos para ver el scroll ajustar cuando este la pantalla con mas componentes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1rem 0rem 1rem;
+}
