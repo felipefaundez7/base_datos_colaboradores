@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-export default function Buscador() {
+export default function Buscador({ setFilteredColab }) {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleInputChange = (e) => {
+    const searchTerm = e.target.value;
+    setSearchTerm(searchTerm);
+    setFilteredColab(searchTerm);
+  };
+
   return (
-    <div>Buscador</div>
-  )
+    <div>      
+      <input
+        type="text"
+        placeholder="Buscar colaborador..."
+        value={searchTerm}
+        onChange={handleInputChange}
+      />
+    </div>
+  );
 }

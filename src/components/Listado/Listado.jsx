@@ -17,8 +17,8 @@ export default function Listado({ tableItem }) {
 
   return (
     <div className="table-container">{/* el width del tamaño de la pantalla y un overflow */}
-      <Table className="table-boot" hover borderless striped responsive>
-        <thead>
+      <Table className="table-boot" hover border striped responsive>
+        <thead >
           <tr>
             <th>Nombre</th>
             <th>Correo</th>

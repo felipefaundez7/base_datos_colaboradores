@@ -3,11 +3,28 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  width: 100%;
 }
 
 .main-div {
-  display: flex;
-  flex-direction: row;
+  text-align: left;
   justify-content: center;
   align-items: center;
+}
+
+.main-div-buscador{
+display: flex;
+}
+
+.main-div-tabla{
+  display: flex;
+}
+
+.main-div-formulario{
+  width: 60%;
+  margin-left: 20px;
+}
+
+.btn-Colaborador{
+  width: 100%;
 }
