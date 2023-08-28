@@ -2,30 +2,31 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-export default function Formulario({ setColab, colab }) {
+export default function Formulario({ setColab, colab, setMessage }) {
   const [input, setInput] = useState({});
-  const [message, setMessage] = useState(null); // Estado para el mensaje de éxito o error
+  
+  
 
   function handleInput(e) {
     setInput({ ...input, [e.target.name]: e.target.value });
   }
 
   function handleSubmit(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (!input.nombre || !input.correo || !input.edad || !input.cargo || !input.telefono) {
-      setMessage('Todos los campos deben estar completos.'); // Mensaje de error si algún campo está vacío
-      return;
-    }
-
-    setColab([...colab, input]);
-    setMessage('Colaborador agregado con éxito.'); // Mensaje de éxito si se agrega el colaborador correctamente
-    setInput({}); // Limpia los campos del formulario después de agregar
+  if (!input.nombre || !input.correo || !input.edad || !input.cargo || !input.telefono) {
+    setMessage('Todos los campos deben estar completos.');
+    return;
   }
+
+  setColab([...colab, input]);
+  setMessage('Colaborador agregado con éxito.');
+  setInput({});
+}
 
   return (
     <div className='main-div-formulario'>
-      <h5>Agregar Colaborador</h5>
+      <h5>Agregar Colaborador</h5><br></br>
       
       <Form onSubmit={(e) => handleSubmit(e)}>
         {/* En el form va el evento */}
@@ -78,7 +79,7 @@ export default function Formulario({ setColab, colab }) {
           {/* en el button va el type */}
           Agregar colaborador
         </Button>
-        {message && <p className={`alert alert-${message.includes('éxito') ? 'success' : 'danger'}`}>{message}</p>}
+        
       </Form>
     </div>
   );
