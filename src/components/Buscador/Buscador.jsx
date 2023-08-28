@@ -13,9 +13,10 @@ export default function Buscador({ setFilteredColab }) {
     <div>      
       <input
         type="text"
-        placeholder="Buscar colaborador..."
+        placeholder="Buscar un colaborador..."
         value={searchTerm}
         onChange={handleInputChange}
+        className="barra-busqueda"
       />
     </div>
   );

@@ -26,15 +26,19 @@ function App() {
   };
 
   return (
-    <div className='main-div'>
-      <h2>Lista de colaboradores</h2><br></br>
-      <div className='main-div-buscador'>
-        <Buscador setFilteredColab={filterColaboradores} /> {/* Agrega el componente Buscador */}
-      </div><br></br>
-      <div className='main-div-tabla'>
-        <Listado tableItem={filteredColab.length > 0 ? filteredColab : colab} />
-        <Formulario setColab={setColab} colab={colab} setMessage={setMessage}/>
-        <Alert message={message} type={message && (message.includes('éxito') ? 'success' : 'danger')} />
+    <div className='container'>
+      <div className='row'>
+        <div className='col-md-6'>
+          <div className='tituloybusqueda'>
+            <h2 className='titulo'>Lista de colaboradores</h2>
+            <Buscador setFilteredColab={filterColaboradores}/>
+          </div>
+          <Listado tableItem={filteredColab.length > 0 ? filteredColab : colab} />
+        </div>
+        <div className='col-md-6'>
+          <Formulario setColab={setColab} colab={colab} setMessage={setMessage} />
+          <Alert message={message} type={message && (message.includes('éxito') ? 'success' : 'danger')} />
+        </div>
       </div>
     </div>
   );

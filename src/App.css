@@ -16,8 +16,10 @@
 display: flex;
 }
 
-.main-div-tabla{
+.main-div-tabla {
   display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start; 
 }
 
 .main-div-formulario{
@@ -26,5 +28,50 @@ display: flex;
 }
 
 .btn-Colaborador{
-  width: 100%;
+  width: 75%;
+}
+
+.form-container {
+  flex: 1;
+  padding-left: 1rem;
+}
+
+.table-container {
+  flex: 1;
+  padding-right: 1rem;
+}
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.col-md-6 {
+  flex: 0 0 50%; 
+  max-width: 50%; 
+  padding: 0 1rem; /* para el espacio entre las columnas */
+}
+
+.container {
+  padding: 2rem;
+}
+
+.tituloybusqueda {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* esto alinea elementos al lado izquierdo */
+  margin-bottom: 1rem; /* esto da el espacio debajo de la barra */
+}
+
+.titulo {
+  margin: 0;
+}
+
+.barra-busqueda {
+  background-color: white; /* Cambia el color de fondo a blanco */
+  color: black; /* Cambia el color de las letras a negro */
+  border: 1px solid #ced4da; /* Agrega un borde para mayor contraste */
+  padding: 0.5rem; /* Añade un poco de espacio interno */
 }

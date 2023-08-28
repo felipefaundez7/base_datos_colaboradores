@@ -24,12 +24,11 @@ export default function Formulario({ setColab, colab, setMessage }) {
   setInput({});
 }
 
-  return (
-    <div className='main-div-formulario'>
-      <h5>Agregar Colaborador</h5><br></br>
-      
-      <Form onSubmit={(e) => handleSubmit(e)}>
-        {/* En el form va el evento */}
+return (
+  <div className='main-div-formulario'>
+    <h5>Agregar Colaborador</h5><br />
+    <Form onSubmit={(e) => handleSubmit(e)}>
+      <div className="form-container">
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Control
             name="nombre"
@@ -75,12 +74,11 @@ export default function Formulario({ setColab, colab, setMessage }) {
             onChange={(e) => handleInput(e)}
           />
         </Form.Group>
-        <Button className="buttonColor btn-Colaborador" type="submit">
-          {/* en el button va el type */}
+        <Button className="buttonColor btn-Colaborador mb-3" type="submit">
           Agregar colaborador
         </Button>
-        
-      </Form>
-    </div>
-  );
+      </div>
+    </Form>
+  </div>
+);
 }
